@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,6 +9,17 @@
     <title>{%block title %}{% endblock %}</title>
 </head>
 <body>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <a href="{% url 'listagem_chamado' %}">
+        <button class="btn btn-outline-success" type="button">Chamados</Chamados></button>
+    </a>
+    <a href="{% url 'listagem_tonners' %}">
+        <button class="btn btn-outline-success" type="button">Tonners</Chamados></button>
+    </a>
+  </form>
+</nav>
+
     {% block nav %}
     {% endblock %}
     {% block main %}
