@@ -29,5 +29,5 @@ class CategoriaForm(forms.ModelForm):
 class AberturaForm(forms.ModelForm):
     class Meta:
         model = Abertura
-        fields = ['status']
+        fields = '__all__'
 

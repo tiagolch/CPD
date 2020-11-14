@@ -14,6 +14,14 @@ def cadastro_tonners(request):
     return render(request, "cadastro_tonners.html", {'form': form})
 
 
+def abertura_chamado(request):
+    form = AberturaForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('/admin')
+    return render(request, "abertura_chamado.html", {'form': form})
+
+
 def atualizacao_tonners(request, id):
     tonners = get_object_or_404(Tonners, pk=id)
     form = TonnersForm(request.POST or None, instance=tonners)
