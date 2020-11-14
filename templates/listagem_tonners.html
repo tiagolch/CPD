@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Listagem de Tonners {% endblock %}
+
+{% block main %}
+<section class="">
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">DESCRIÇÃO</th>
+      <th scope="col">QUANTIDADE</th>
+      <th scope="col">ULTIMA ALTERAÇÃO</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for lis in lista %}
+    <tr>
+      <th scope="row"><a href=" {% url 'atualizacao_tonners' lis.id%}">{{lis.descricao}}</a></th>
+      <td>{{lis.quantidade}}</td>
+      <td>{{lis.get_ultimaAlteracao}}</td>
+      <td><a href="{% url 'delete_tonners' lis.id %}"><button class="btn btn-danger">Delete</button></a></td>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
+
+        <a href="{% url 'cadastro_tonners' %}"><button class="btn btn-success">Novo</button></a>
+</section>
+{% endblock %}
