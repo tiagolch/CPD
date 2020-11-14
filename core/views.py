@@ -18,7 +18,7 @@ def abertura_chamado(request):
     form = AberturaForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('')
+        return redirect('listagem_chamado')
     return render(request, "abertura_chamado.html", {'form': form})
 
 
@@ -46,7 +46,6 @@ def delete_tonners(request, id):
         tonners.delete()
         return redirect('listagem_tonners')
     return render(request, 'delete_tonners_confirm.html', {'tonners': tonners})
-
 
 
 def delete_chamado(request, id):

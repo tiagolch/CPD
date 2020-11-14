@@ -29,5 +29,5 @@ class CategoriaForm(forms.ModelForm):
 class AberturaForm(forms.ModelForm):
     class Meta:
         model = Abertura
-        fields = '__all__'
+        exclude = ('tecnico',)
 
